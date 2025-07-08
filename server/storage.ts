@@ -41,7 +41,7 @@ export class MemStorage implements IStorage {
       {
         title: "Fresh Organic Tomato Box",
         price: "19,000 KRW",
-        image: "https://images.unsplash.com/photo-1546470427-e2e26c0e63a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+        image: "https://images.unsplash.com/photo-1592841200221-a6898f307baa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300",
         buyLink: "https://your-mockshop.com/product/123",
         description: "Premium organic tomatoes grown with sustainable farming practices",
         cropName: "tomato"
@@ -93,7 +93,11 @@ export class MemStorage implements IStorage {
 
   async createCrop(insertCrop: InsertCrop): Promise<Crop> {
     const id = this.currentCropId++;
-    const crop: Crop = { ...insertCrop, id };
+    const crop: Crop = { 
+      ...insertCrop, 
+      id,
+      variety: insertCrop.variety || null
+    };
     this.crops.set(id, crop);
     return crop;
   }
@@ -110,7 +114,11 @@ export class MemStorage implements IStorage {
 
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
     const id = this.currentProductId++;
-    const product: Product = { ...insertProduct, id };
+    const product: Product = { 
+      ...insertProduct, 
+      id,
+      description: insertProduct.description || null
+    };
     this.products.set(id, product);
     return product;
   }

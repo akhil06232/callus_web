@@ -15,8 +15,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       let cropName = "";
       let nftId = "";
       
-      // Check if input contains NFT ID pattern (e.g., "Tomato #124")
-      const nftMatch = input.match(/^(.+?)\s*#(\d+)$/);
+      // Check if input contains NFT ID pattern (e.g., "Tomato #124" or "Tomato#124")
+      const nftMatch = input.match(/^(.+?)\s*#\s*(\d+)$/);
       if (nftMatch) {
         cropName = nftMatch[1].trim();
         nftId = nftMatch[2];
