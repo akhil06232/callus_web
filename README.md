@@ -59,10 +59,7 @@ The application uses two main entities:
 
 ### Backend Dependencies
 - Express.js server framework
-- Drizzle ORM with PostgreSQL adapter
-- Neon Database serverless driver
-- Zod validation library
-- Session management (connect-pg-simple)
+
 
 ### Development Dependencies
 - Vite build tool with React plugin
@@ -83,10 +80,7 @@ The application uses two main entities:
 - Build script: `npm run build`
 - Start script: `npm start`
 
-### Database Management
-- Drizzle Kit for schema migrations
-- Push command: `npm run db:push`
-- PostgreSQL connection via DATABASE_URL environment variable
+
 
 ## Changelog
 
