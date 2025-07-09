@@ -17,9 +17,6 @@ This is a modern web application that allows users to search for products based 
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js framework
 - **Language**: TypeScript with ES modules
-- **Database**: PostgreSQL (configured for Neon Database)
-- **ORM**: Drizzle ORM for type-safe database operations
-- **Validation**: Zod for schema validation
 - **Development**: Hot reloading with Vite integration
 
 ## Key Components
